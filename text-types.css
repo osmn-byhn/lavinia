@@ -14,7 +14,30 @@
 .text {
     font-family: var(--roboto);
     font-size: 18px;
+    display: inline;
+    margin: 0;
+    padding: 0;
 }
+
+.text-underline {
+    text-decoration-line: underline;
+    -moz-text-decoration-line: underline;
+}
+.text-overline {
+    text-decoration-line: overline;
+    -moz-text-decoration-line: overline;
+}
+.text-line {
+    text-decoration-line: line-through;
+    -moz-text-decoration-line: line-through;
+
+}
+.text-none {
+    text-decoration-line: none;
+    -moz-text-decoration-line: none;
+}
+
+/*Başlıklar */
 .head-1 {
     font-family: var(--headvig);
     font-weight: 900;
@@ -85,5 +108,47 @@
 /*Links*/
 
 .link {
+    cursor: pointer;
+    font-family: var(--roboto);
+    font-weight: 500;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.link-blue {
     color: var(--blue);
+}
+.link-red {
+    color: var(--red);
+}
+.link-green {
+    color: var(--green);
+}
+.link-yellow {
+    color: var(--yellow);
+}
+.link-pink {
+    color: var(--pink);
+}
+.link-purple {
+    color: var(--purple);
+}
+.link-brown {
+    color: var(--brown);
+}
+.link-orange {
+    color: var(--orange);
+}
+.link-aqua {
+    color: var(--aqua);
+}
+.link-black {
+    color: var(--black);
+}
+.link-white {
+    color: var(--white);
+}
+.link-gray {
+    color: var(--gray);
 }
