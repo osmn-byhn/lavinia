@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Newsreader:opsz,wght@6..72,300&family=Nova+Square&family=Roboto+Slab&family=Roboto:wght@300&family=Source+Code+Pro:wght@300&display=swap');
+@import './colors.css';
+
+:root {
+    --headvig: 'Hedvig Letters Sans', sans-serif;
+    --news: 'Newsreader', serif;
+    --nova: 'Nova Square', sans-serif;
+    --roboto: 'Roboto', sans-serif;
+    --slab: 'Roboto Slab', serif;
+    --code: 'Source Code Pro', monospace;
+}
+/*basic text styles*/
+
+.text {
+    font-family: var(--roboto);
+    font-size: 18px;
+}
+.head-1 {
+    font-family: var(--headvig);
+    font-weight: 900;
+    font-size: 45px;
+}
+.head-2 {
+    font-family: var(--headvig);
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.head-3 {
+    font-family: var(--headvig);
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.head-4 {
+    font-family: var(--headvig);
+    font-weight: 500;
+    font-size: 30px;
+}
+.head-5 {
+    font-family: var(--headvig);
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.head-6 {
+    font-family: var(--headvig);
+    font-weight: 300;
+    font-size: 20px;
+}
+
+/*code styles*/
+.code {
+    background-color: #000000;
+    color: white;
+    font-family: var(--code);
+    position:relative;
+    padding:10px;
+    border:1px solid #1a6a37;
+    white-space: pre;
+    border-radius:0px;
+    overflow-x:scroll;
+}
+.code {
+  -webkit-user-select:all;
+  -moz-user-select:all;
+  -ms-user-select:all;
+  user-select:all;
+}
+.code::-webkit-scrollbar {
+  height:7px
+}
+.code::-webkit-scrollbar-thumb {
+  border-radius:10px;background-color:#1a6a37
+}
+
+.code-tip {
+    font-family: var(--code);
+    color: black;
+    background-color: rgb(230, 229, 229);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/*Links*/
+
+.link {
+    color: var(--blue);
+}

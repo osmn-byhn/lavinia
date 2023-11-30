@@ -14,3 +14,40 @@
     --gray: #818180;
 }
 
+
+.text-blue {
+    color: var(--blue);
+}
+.text-red {
+    color: var(--red);
+}
+.text-green {
+    color: var(--green);
+}
+.text-yellow {
+    color: var(--yellow);
+}
+.text-pink {
+    color: var(--pink);
+}
+.text-purple {
+    color: var(--purple);
+}
+.text-brown {
+    color: var(--brown);
+}
+.text-orange {
+    color: var(--orange);
+}
+.text-aqua {
+    color: var(--aqua);
+}
+.text-black {
+    color: var(--black);
+}
+.text-white {
+    color: var(--white);
+}
+.text-gray {
+    color: var(--gray);
+}
