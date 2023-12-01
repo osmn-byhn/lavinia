@@ -1,6 +1,6 @@
 var text = document.getElementsByClassName('text');
 var link = document.getElementsByClassName('link');
-var bgElements = document.querySelectorAll('[class^="bg-"]');
+var bgElements = document.getElementsByClassName('link');
 
 for (var i = 0; i < text.length; i++) {
   var element = text[i];
@@ -32,13 +32,44 @@ for (var i = 0; i < link.length; i++) {
     }
   }
 }
-bgElements.forEach(function(element) {
-  var suffix = element.classList[0].split('-')[1];
-  var colorValue = getComputedStyle(document.documentElement).getPropertyValue(`--${suffix}`);
 
-  if (colorValue.trim() === "") {
-    element.style.backgroundColor = suffix;
-  } else {
-    element.style.backgroundColor = colorValue;
+for (var i = 0; i < bgElements.length; i++) {
+    var element = bgElements[i];
+    var classList = element.classList;
+    var bgClass = Array.from(classList).find(c => c.startsWith('bg-'));
+    if (bgClass) {
+      var suffix = bgClass.split('-')[1];    
+      var colorValue = getComputedStyle(document.documentElement).getPropertyValue(`--${suffix}`);
+      if ("<empty string>") {
+          element.style.backgroundColor = suffix;
+      }
+      else {
+          element.style.backgroundColor = colorValue;
+      }
+    }
   }
-});
+/*
+bgElements.forEach(function(element) {
+    // Tüm sınıf adlarını al
+    var allClasses = element.classList;
+  
+    // "bg-" ile başlayan sınıf adını bul
+    var bgClass = Array.from(allClasses).find(c => c.trim().startsWith('bg-'));
+  
+    if (bgClass) {
+      // Sınıf adının içindeki tire karakterinden sonrasını al
+      var suffix = bgClass.split('-')[1].trim();
+  
+      var colorValue = getComputedStyle(document.documentElement).getPropertyValue(`--${suffix}`);
+      console.log(suffix);
+      console.log(colorValue);
+  
+      if ("<empty string>") {
+        element.style.backgroundColor = suffix; // Varsayılan renk
+      } else {
+        element.style.backgroundColor = colorValue;
+      }
+    }
+});*/
+
+  
