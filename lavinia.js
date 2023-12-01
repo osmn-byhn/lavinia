@@ -1,5 +1,7 @@
 var text = document.getElementsByClassName('text');
 var link = document.getElementsByClassName('link');
+var bgElements = document.querySelectorAll('[class^="bg-"]');
+
 for (var i = 0; i < text.length; i++) {
   var element = text[i];
   var classList = element.classList;
@@ -30,3 +32,13 @@ for (var i = 0; i < link.length; i++) {
     }
   }
 }
+bgElements.forEach(function(element) {
+  var suffix = element.classList[0].split('-')[1];
+  var colorValue = getComputedStyle(document.documentElement).getPropertyValue(`--${suffix}`);
+
+  if (colorValue.trim() === "") {
+    element.style.backgroundColor = suffix;
+  } else {
+    element.style.backgroundColor = colorValue;
+  }
+});
