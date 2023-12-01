@@ -1,6 +1,61 @@
 var text = document.getElementsByClassName('text');
 var link = document.getElementsByClassName('link');
 var bgElements = document.getElementsByClassName('link');
+var cursorList = {
+    'auto': 'auto',
+    'default': 'default',
+    'none': 'none',
+    'context-menu': 'context-menu',
+    'help': 'help',
+    'pointer': 'pointer',
+    'progress': 'progress',
+    'wait': 'wait',
+    'cell': 'cell',
+    'crosshair': 'crosshair',
+    'text': 'text',
+    'vertical-text': 'vertical-text',
+    'alias': 'alias',
+    'copy': 'copy',
+    'move': 'move',
+    'no-drop': 'no-drop',
+    'not-allowed': 'not-allowed',
+    'grab': 'grab',
+    'grabbing': 'grabbing',
+    'all-scroll': 'all-scroll',
+    'col-resize': 'col-resize',
+    'row-resize': 'row-resize',
+    'n-resize': 'n-resize',
+    'e-resize': 'e-resize',
+    's-resize': 's-resize',
+    'w-resize': 'w-resize',
+    'ne-resize': 'ne-resize',
+    'nw-resize': 'nw-resize',
+    'se-resize': 'se-resize',
+    'sw-resize': 'sw-resize',
+    'ew-resize': 'ew-resize',
+    'ns-resize': 'ns-resize',
+    'nesw-resize': 'nesw-resize',
+    'nwse-resize': 'nwse-resize',
+    'zoom-in': 'zoom-in',
+    'zoom-out': 'zoom-out',
+  };
+
+  var listStyleTypes = {
+    'disc': 'disc',
+    'circle': 'circle',
+    'square': 'square',
+    'decimal': 'decimal',
+    'decimal-leading-zero': 'decimal-leading-zero',
+    'lower-roman': 'lower-roman',
+    'upper-roman': 'upper-roman',
+    'lower-greek': 'lower-greek',
+    'lower-alpha': 'lower-alpha',
+    'upper-alpha': 'upper-alpha',
+    'none': 'none' // Veya kendi özel bir değer ekleyebilirsiniz
+  };
+  
+var divElements = document.querySelectorAll('*');
+
 
 for (var i = 0; i < text.length; i++) {
   var element = text[i];
@@ -70,49 +125,7 @@ bgElements.forEach(function(element) {
         element.style.backgroundColor = colorValue;
       }
     }
-});*/
-
-  
-var cursorList = {
-    'auto': 'auto',
-    'default': 'default',
-    'none': 'none',
-    'context-menu': 'context-menu',
-    'help': 'help',
-    'pointer': 'pointer',
-    'progress': 'progress',
-    'wait': 'wait',
-    'cell': 'cell',
-    'crosshair': 'crosshair',
-    'text': 'text',
-    'vertical-text': 'vertical-text',
-    'alias': 'alias',
-    'copy': 'copy',
-    'move': 'move',
-    'no-drop': 'no-drop',
-    'not-allowed': 'not-allowed',
-    'grab': 'grab',
-    'grabbing': 'grabbing',
-    'all-scroll': 'all-scroll',
-    'col-resize': 'col-resize',
-    'row-resize': 'row-resize',
-    'n-resize': 'n-resize',
-    'e-resize': 'e-resize',
-    's-resize': 's-resize',
-    'w-resize': 'w-resize',
-    'ne-resize': 'ne-resize',
-    'nw-resize': 'nw-resize',
-    'se-resize': 'se-resize',
-    'sw-resize': 'sw-resize',
-    'ew-resize': 'ew-resize',
-    'ns-resize': 'ns-resize',
-    'nesw-resize': 'nesw-resize',
-    'nwse-resize': 'nwse-resize',
-    'zoom-in': 'zoom-in',
-    'zoom-out': 'zoom-out',
-  };
-  
-  var divElements = document.querySelectorAll('*');
+});*/  
   divElements.forEach(function(div) {
     var classNames = div.classList;
     classNames.forEach(function(className) {
@@ -122,3 +135,12 @@ var cursorList = {
     });
   });
   
+
+  divElements.forEach(function(div) {
+    var classNames = div.classList;
+    classNames.forEach(function(className) {
+      if (listStyleTypes.hasOwnProperty(className)) {
+        div.style.listStyleType = listStyleTypes[className];
+      }
+    });
+  });
