@@ -1,29 +1,32 @@
-var elements = document.getElementsByClassName('text');
-
-for (var i = 0; i < elements.length; i++) {
-  var element = elements[i];
+var text = document.getElementsByClassName('text');
+var link = document.getElementsByClassName('link');
+for (var i = 0; i < text.length; i++) {
+  var element = text[i];
   var classList = element.classList;
-
-  // 'text-' ile başlayan class'ı bul
   var textClass = Array.from(classList).find(c => c.startsWith('text-'));
-  console.log(textClass);
-
   if (textClass) {
-    console.log('var kral');
-    
-    // 'text-' ile başlayan class'ın renk değerini al ve elementin color özelliğini ayarla
-    var suffix = textClass.split('-')[1]; // - den sonrasını al
-    console.log(suffix);
-    
+    var suffix = textClass.split('-')[1];
     var colorValue = getComputedStyle(document.documentElement).getPropertyValue(`--${suffix}`);
-
     if ("<empty string>") {
-        console.log("yakalandın");
         element.style.color = suffix;
     }
     else {
         element.style.color = colorValue;
     }
   }
-  
+}
+for (var i = 0; i < link.length; i++) {
+  var element = link[i];
+  var classList = element.classList;
+  var linkClass = Array.from(classList).find(c => c.startsWith('link-'));
+  if (linkClass) {
+    var suffix = linkClass.split('-')[1];    
+    var colorValue = getComputedStyle(document.documentElement).getPropertyValue(`--${suffix}`);
+    if ("<empty string>") {
+        element.style.color = suffix;
+    }
+    else {
+        element.style.color = colorValue;
+    }
+  }
 }
